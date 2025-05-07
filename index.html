@@ -15,9 +15,70 @@
     <title>Frontend Mentor | E-commerce product page</title>
   </head>
   <body>
-    Collections Men Women About Contact Sneaker Company Fall Limited Edition
-    Sneakers These low-profile sneakers are your perfect casual wear companion.
-    Featuring a durable rubber outer sole, they’ll withstand everything the
-    weather can offer. $125.00 50% $250.00 0 Add to cart
+    <header id="navigation-wrapper">
+      <div id="left-container">
+        <img src="images/icon-menu.svg" alt="Menu Button Icon" />
+        <img src="images/logo.svg" alt="Sneaker logo" />
+        <nav id="navigation">
+          <a href="">Collections</a>
+          <a href="">Men</a>
+          <a href="">Women</a>
+          <a href="">About</a>
+          <a href="">Contact</a>
+        </nav>
+      </div>
+      <div id="right-container">
+        <img src="images/icon-cart.svg" alt="Cart icon" />
+        <img src="images/image-avatar.png" alt="Avatar image" />
+      </div>
+    </header>
+    <main>
+      <figure id="thumbnail-section">
+        <img src="images/image-product-1.jpg" alt="Product image" />
+        <div>
+          <img
+            src="images/image-product-1-thumbnail.jpg"
+            alt="Product image thumbnail 1"
+          />
+          <img
+            src="images/image-product-2-thumbnail.jpg"
+            alt="Product image thumbnail 2"
+          />
+          <img
+            src="images/image-product-3-thumbnail.jpg"
+            alt="Product image thumbnail 3"
+          />
+          <img
+            src="images/image-product-4-thumbnail.jpg"
+            alt="Product image thumbnail 4"
+          />
+        </div>
+      </figure>
+
+      <section id="product-section">
+        <div id="product-detail">
+          <p id="company">Sneaker Company</p>
+          <h1 id="product-name">Fall Limited Edition Sneakers</h1>
+          <p id="product-description">
+            These low-profile sneakers are your perfect casual wear companion.
+            Featuring a durable rubber outer sole, they’ll withstand everything
+            the weather can offer.
+          </p>
+        </div>
+        <div id="product-price">
+          <span id="current-price">$125.00</span>
+          <span id="discount">50%</span>
+          <span id="old-price">$250.00</span>
+        </div>
+        <div>
+          <div id="quantity-setting">
+            <img src="images/icon-minus.svg" alt="Minus button for quantity" />
+            <span id="current-quantity">0</span>
+            <img src="images/icon-plus.svg" alt="Plus button for quantity" />
+          </div>
+          <button>Add to cart</button>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
