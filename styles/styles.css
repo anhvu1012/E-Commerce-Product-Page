@@ -1,1 +1,59 @@
-/*# sourceMappingURL=styles.css.map */
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Kumbh Sans", sans-serif;
+  background-color: hsl(0, 0%, 100%);
+}
+
+figure, h1, p {
+  margin: 0;
+}
+
+#navigation-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 30px;
+}
+#navigation-wrapper #left-container {
+  display: flex;
+  align-items: end;
+  column-gap: 15px;
+}
+#navigation-wrapper #left-container #navigation {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: hsl(0, 0%, 100%);
+  width: 160px;
+  padding: 30px;
+}
+#navigation-wrapper #left-container #navigation img {
+  margin-bottom: 40px;
+}
+#navigation-wrapper #left-container #navigation div {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}
+#navigation-wrapper #left-container #navigation div a {
+  text-decoration: none;
+  color: hsl(0, 0%, 0%);
+  font-size: 18px;
+  font-weight: 700;
+}
+#navigation-wrapper #right-container img {
+  height: 22px;
+}
+#navigation-wrapper #right-container .account-avatar {
+  border-radius: 50%;
+  height: 27px;
+  box-sizing: border-box;
+  margin-left: 15px;
+}
+
+.icon-btn {
+  cursor: pointer;
+}/*# sourceMappingURL=styles.css.map */

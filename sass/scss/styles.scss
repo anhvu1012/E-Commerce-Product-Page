@@ -1,0 +1,80 @@
+$font: 'Kumbh Sans', sans-serif;
+
+$orange: hsl(26, 100%, 55%);
+$pale-orange: hsl(25, 100%, 94%);
+
+$very-dark-blue: hsl(220, 13%, 13%);
+$dark-grayish-blue: hsl(219, 9%, 45%);
+$grayish-blue: hsl(220, 14%, 75%);
+$light-grayish-blue: hsl(223, 64%, 98%);
+$white: hsl(0, 0%, 100%);
+$black: hsl(0, 0%, 0%);
+
+body{
+  padding: 0;
+  margin: 0;
+  font-family: $font;
+  background-color: $white;
+}
+
+figure, h1, p{
+  margin: 0;
+}
+
+#navigation-wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 30px;
+
+  #left-container{
+    display: flex;
+    align-items: end;
+    column-gap: 15px;
+
+    #navigation{
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      background-color: $white;
+      width: 160px;
+      padding: 30px;
+
+      img{
+        margin-bottom: 40px;
+      }
+
+      div{
+        display: flex;
+        flex-direction: column;
+        row-gap: 30px;
+
+        a{
+          text-decoration: none;
+          color: $black;
+          font-size: 18px;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+
+  #right-container{
+    img{
+      height: 22px;
+    }
+
+    .account-avatar{
+      border-radius: 50%;
+      height: 27px;
+      box-sizing: border-box;
+      margin-left: 15px;
+    }
+  }
+}
+
+.icon-btn{
+  cursor: pointer;
+}

@@ -11,25 +11,48 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/styles.css" />
     <title>Frontend Mentor | E-commerce product page</title>
   </head>
   <body>
     <header id="navigation-wrapper">
       <div id="left-container">
-        <img src="images/icon-menu.svg" alt="Menu Button Icon" />
-        <img src="images/logo.svg" alt="Sneaker logo" />
+        <img
+          class="icon-btn"
+          id="menu-btn"
+          src="images/icon-menu.svg"
+          alt="Menu Button Icon"
+        />
+        <img id="logo" src="images/logo.svg" alt="Sneaker logo" />
         <nav id="navigation">
-          <a href="">Collections</a>
-          <a href="">Men</a>
-          <a href="">Women</a>
-          <a href="">About</a>
-          <a href="">Contact</a>
+          <img
+            class="icon-btn"
+            id="close-btn"
+            src="images/icon-close.svg"
+            alt="Close button icon"
+          />
+          <div>
+            <a href="">Collections</a>
+            <a href="">Men</a>
+            <a href="">Women</a>
+            <a href="">About</a>
+            <a href="">Contact</a>
+          </div>
         </nav>
       </div>
       <div id="right-container">
-        <img src="images/icon-cart.svg" alt="Cart icon" />
-        <img src="images/image-avatar.png" alt="Avatar image" />
+        <img class="icon-btn" src="images/icon-cart.svg" alt="Cart icon" />
+        <img
+          class="account-avatar"
+          src="images/image-avatar.png"
+          alt="Avatar image"
+        />
       </div>
     </header>
     <main>
@@ -80,5 +103,6 @@
         </div>
       </section>
     </main>
+    <script src="script.js"></script>
   </body>
 </html>
