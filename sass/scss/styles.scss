@@ -12,29 +12,36 @@ $black: hsl(0, 0%, 0%);
 
 $bg-black: rgba(0, 0, 0, 0.75);
 
+@mixin text-style($font-size, $font-weight){
+  font-size: $font-size;
+  font-weight: $font-weight; 
+}
+
 body{
   padding: 0;
   margin: 0;
   font-family: $font;
   background-color: $white;
   position: relative;
-
 }
 
-figure, h1, p{
+figure, h1, h2, p, hr{
   margin: 0;
+}
+
+img{
+  box-sizing: border-box;
 }
 
 #navigation-wrapper{
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 25px 30px;
+  padding: 20px 25px;
 
   #left-container{
-    display: flex;
-    align-items: end;
-    column-gap: 15px;
+    #logo{
+      margin-left: 10px;
+    }
 
     #navigation{
       display: none;
@@ -64,8 +71,8 @@ figure, h1, p{
           a{
             text-decoration: none;
             color: $black;
-            font-size: 16px;
-            font-weight: 700;
+            @include text-style(16px, 700);
+            
           }
         }
       }
@@ -73,19 +80,74 @@ figure, h1, p{
   }
 
   #right-container{
+    display: flex;
+    align-items: center;
+
     img{
-      height: 22px;
+      height: 20px;
+    }
+
+    #cart-container{
+      display: flex;
+      flex-direction: column;
+      background-color: $white;
+      position: absolute;
+      top: 75px;
+      left: 10px;
+      right: 10px;
+      height: 250px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+
+      &.hidden{
+        display: none;
+      }
+
+      h2{
+        @include text-style(14px, 700);
+        padding: 25px;
+      }
+
+      hr{
+        background-color: $grayish-blue;
+        height: 0.4px;
+        border-width: 0;
+      }
+      
+      #cart-product-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: auto;
+        span{
+          @include text-style(14px, 700);
+          color: $dark-grayish-blue;
+        }
+      }
     }
 
     .account-avatar{
       border-radius: 50%;
-      height: 27px;
-      box-sizing: border-box;
+      height: 24px;
       margin-left: 15px;
     }
   }
+
+  .icon-btn{
+    cursor: pointer;
+    height: 16px;
+  }
 }
 
-.icon-btn{
-  cursor: pointer;
+main{
+  #thumbnail-section{
+    img{
+      width: 100%;
+      height: 300px;
+    }
+
+    div{
+      display: none;
+    }
+  }
 }
