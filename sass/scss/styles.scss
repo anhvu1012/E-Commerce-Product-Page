@@ -10,11 +10,15 @@ $light-grayish-blue: hsl(223, 64%, 98%);
 $white: hsl(0, 0%, 100%);
 $black: hsl(0, 0%, 0%);
 
+$bg-black: rgba(0, 0, 0, 0.75);
+
 body{
   padding: 0;
   margin: 0;
   font-family: $font;
   background-color: $white;
+  position: relative;
+
 }
 
 figure, h1, p{
@@ -38,24 +42,31 @@ figure, h1, p{
       top: 0;
       left: 0;
       bottom: 0;
-      background-color: $white;
-      width: 160px;
-      padding: 30px;
+      right: 0;
+      background-color: $bg-black;
 
-      img{
-        margin-bottom: 40px;
-      }
+      nav{
+        background-color: $white;
+        width: 170px;
+        height: 100%;
+        padding: 30px;
+        opacity: 1;
 
-      div{
-        display: flex;
-        flex-direction: column;
-        row-gap: 30px;
+        img{
+          margin-bottom: 45px;
+        }
 
-        a{
-          text-decoration: none;
-          color: $black;
-          font-size: 18px;
-          font-weight: 700;
+        div{
+          display: flex;
+          flex-direction: column;
+          row-gap: 25px;
+
+          a{
+            text-decoration: none;
+            color: $black;
+            font-size: 16px;
+            font-weight: 700;
+          }
         }
       }
     }

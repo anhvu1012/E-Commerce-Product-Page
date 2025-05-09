@@ -3,6 +3,7 @@ body {
   margin: 0;
   font-family: "Kumbh Sans", sans-serif;
   background-color: hsl(0, 0%, 100%);
+  position: relative;
 }
 
 figure, h1, p {
@@ -26,22 +27,28 @@ figure, h1, p {
   top: 0;
   left: 0;
   bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+#navigation-wrapper #left-container #navigation nav {
   background-color: hsl(0, 0%, 100%);
-  width: 160px;
+  width: 170px;
+  height: 100%;
   padding: 30px;
+  opacity: 1;
 }
-#navigation-wrapper #left-container #navigation img {
-  margin-bottom: 40px;
+#navigation-wrapper #left-container #navigation nav img {
+  margin-bottom: 45px;
 }
-#navigation-wrapper #left-container #navigation div {
+#navigation-wrapper #left-container #navigation nav div {
   display: flex;
   flex-direction: column;
-  row-gap: 30px;
+  row-gap: 25px;
 }
-#navigation-wrapper #left-container #navigation div a {
+#navigation-wrapper #left-container #navigation nav div a {
   text-decoration: none;
   color: hsl(0, 0%, 0%);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
 }
 #navigation-wrapper #right-container img {
