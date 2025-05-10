@@ -11,6 +11,7 @@ $white: hsl(0, 0%, 100%);
 $black: hsl(0, 0%, 0%);
 
 $bg-black: rgba(0, 0, 0, 0.75);
+$hover-btn: rgba(255, 125, 26, 0.7);
 
 @mixin text-style($font-size, $font-weight){
   font-size: $font-size;
@@ -22,7 +23,7 @@ body{
   margin: 0;
   font-family: $font;
   background-color: $white;
-  // position: relative;
+  position: relative;
 }
 
 figure, h1, h2, p, hr{
@@ -59,6 +60,10 @@ img{
 
 .cursor-pointer{
   cursor: pointer;
+}
+
+.hidden{
+  display: none;
 }
 
 #navigation-wrapper{
@@ -105,8 +110,31 @@ img{
   }
 
   #right-container{
-    &>img{
-      height: 20px;
+    #cart-nav{
+      position: relative;
+
+      #cart-btn{
+        height: 20px;
+      }
+
+      #cart-quantity{
+        position: absolute;
+        right: -7px;
+        top: -6px;
+        background-color: $orange;
+        color: $white;
+        @include text-style(9px, 400);
+        padding: 1px 7px;
+        border-radius: 12px;
+      }
+
+      &:hover{
+        svg{
+          path{
+            fill: $black;
+          }
+        }
+      }
     }
 
     #cart-container{
@@ -116,13 +144,9 @@ img{
       top: 75px;
       left: 10px;
       right: 10px;
-      height: 250px;
+      height: 280px;
       border-radius: 10px;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-
-      &.hidden{
-        display: none;
-      }
 
       h2{
         @include text-style(14px, 700);
@@ -163,6 +187,7 @@ img{
             .bold{
               color: $very-dark-blue;
               font-weight: 700;
+              margin-left: 5px;
             }
           }
         }
@@ -176,6 +201,10 @@ img{
           @include text-style(16px, 700);
           font-family: $font;
           margin-bottom: 5px;
+
+          &:hover{
+            background-color: $hover-btn;
+          }
         }
       }
     }
@@ -184,6 +213,10 @@ img{
       border-radius: 50%;
       height: 24px;
       margin-left: 15px;
+
+      &:hover{
+        outline: 1px solid $orange;
+      }
     }
   }
 
@@ -234,16 +267,17 @@ main{
       margin-bottom: 30px;
       .company{
         text-transform: uppercase;
-        @include text-style(14px, 700);
+        @include text-style(13px, 700);
         color: $dark-grayish-blue;
         letter-spacing: 1.2px;
         margin-bottom: 15px;
       }
 
       .product-name{
-        @include text-style(30px, 700);
+        @include text-style(28px, 700);
         color: $very-dark-blue;
         margin-bottom: 20px;
+        line-height: 1.2;
       }
 
       .product-description{
@@ -257,7 +291,7 @@ main{
       margin-bottom: 30px;
 
       .current-price{
-        @include text-style(30px, 700);
+        @include text-style(28px, 700);
         color: $very-dark-blue;
 
         .discount{
@@ -283,9 +317,15 @@ main{
       margin-bottom: 20px;
       padding: 20px 25px;
       
-      img{
-          width: 15px;
+      div{
+        &:hover{
+          svg{
+          use{
+            fill: $hover-btn;
+          }
         }
+        }
+      }
 
       #current-quantity{
         @include text-style(18px, 700);
@@ -307,6 +347,11 @@ main{
       svg{
         fill: $very-dark-blue;
         margin-right: 10px;
+      }
+
+      &:hover{
+        background-color: $hover-btn;
+        box-shadow: none;
       }
     }
   }
