@@ -21,8 +21,8 @@
     <title>Frontend Mentor | E-commerce product page</title>
   </head>
   <body>
-    <header class="flex space-between" id="navigation-wrapper">
-      <div id="left-container">
+    <header class="flex space-between align-center" id="navigation-wrapper">
+      <div class="flex align-center" id="left-container">
         <img
           class="icon-btn cursor-pointer"
           id="menu-btn"
@@ -38,7 +38,7 @@
               src="images/icon-close.svg"
               alt="Close button icon"
             />
-            <div class="flex flex-column">
+            <div class="flex">
               <a href="">Collections</a>
               <a href="">Men</a>
               <a href="">Women</a>
@@ -83,7 +83,7 @@
       </div>
     </header>
     <main>
-      <figure class="thumbnail-section">
+      <figure class="flex flex-column thumbnail-section">
         <button
           class="flex justify-center align-center control-img-btn cursor-pointer"
           id="previous-btn"
@@ -118,22 +118,30 @@
           </svg>
         </button>
         <div id="thumbnail-container">
-          <img
-            src="images/image-product-1-thumbnail.jpg"
-            alt="Product image thumbnail 1"
-          />
-          <img
-            src="images/image-product-2-thumbnail.jpg"
-            alt="Product image thumbnail 2"
-          />
-          <img
-            src="images/image-product-3-thumbnail.jpg"
-            alt="Product image thumbnail 3"
-          />
-          <img
-            src="images/image-product-4-thumbnail.jpg"
-            alt="Product image thumbnail 4"
-          />
+          <figure class="thumbnail-hover">
+            <img
+              src="images/image-product-1-thumbnail.jpg"
+              alt="Product image thumbnail 1"
+            />
+          </figure>
+          <figure>
+            <img
+              src="images/image-product-2-thumbnail.jpg"
+              alt="Product image thumbnail 2"
+            />
+          </figure>
+          <figure>
+            <img
+              src="images/image-product-3-thumbnail.jpg"
+              alt="Product image thumbnail 3"
+            />
+          </figure>
+          <figure>
+            <img
+              src="images/image-product-4-thumbnail.jpg"
+              alt="Product image thumbnail 4"
+            />
+          </figure>
         </div>
       </figure>
 
@@ -153,7 +161,10 @@
           >
           <span class="old-price">$250.00</span>
         </div>
-        <div>
+        <div
+          class="flex flex-column align-center"
+          id="quantity-setting-and-btn-wrapper"
+        >
           <div
             class="flex space-between align-center"
             id="quantity-setting-container"

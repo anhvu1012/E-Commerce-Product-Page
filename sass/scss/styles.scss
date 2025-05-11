@@ -21,6 +21,7 @@ $hover-btn: rgba(255, 125, 26, 0.7);
 body{
   padding: 0;
   margin: 0;
+  background-color: $white;
   font-family: $font;
   background-color: $white;
   position: relative;
@@ -32,6 +33,7 @@ figure, h1, h2, p, hr{
 
 img{
   box-sizing: border-box;
+  object-fit: fill;
 }
 
 .flex{
@@ -66,8 +68,22 @@ img{
   display: none;
 }
 
+.thumbnail-hover{
+  outline: 3px solid $orange;
+            
+  img{
+    opacity: 0.5;
+  }
+}
+
 #navigation-wrapper{
+  background-color: $white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   padding: 20px 25px;
+  z-index: 1;
 
   #left-container{
     #logo{
@@ -91,11 +107,12 @@ img{
         padding: 30px;
         opacity: 1;
 
-        img{
+        #close-btn{
           margin-bottom: 45px;
         }
 
         div{
+          flex-direction: column;
           row-gap: 25px;
 
           a{
@@ -211,7 +228,7 @@ img{
 
     .account-avatar{
       border-radius: 50%;
-      height: 24px;
+      height: 26px;
       margin-left: 15px;
 
       &:hover{
@@ -226,6 +243,8 @@ img{
 }
 
 main{
+  margin-top: 65px;
+
   .thumbnail-section{
     position: relative;
     height: 300px;
@@ -264,7 +283,7 @@ main{
     padding: 25px;
 
     .product-detail-container{
-      margin-bottom: 30px;
+      margin-bottom: 20px;
       .company{
         text-transform: uppercase;
         @include text-style(13px, 700);
@@ -276,7 +295,7 @@ main{
       .product-name{
         @include text-style(28px, 700);
         color: $very-dark-blue;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
         line-height: 1.2;
       }
 
@@ -288,7 +307,7 @@ main{
     }
 
     .product-price{
-      margin-bottom: 30px;
+      margin-bottom: 25px;
 
       .current-price{
         @include text-style(28px, 700);
@@ -312,10 +331,12 @@ main{
     }
 
     #quantity-setting-container{
+      width: 100%;
       background-color: $light-grayish-blue;
       border-radius: 10px;
       margin-bottom: 20px;
-      padding: 20px 25px;
+      padding: 15px 25px;
+      box-sizing: border-box;
       
       div{
         &:hover{
@@ -338,7 +359,7 @@ main{
       background-color: $orange;
       border: none;
       border-radius: 10px;
-      padding-block: 20px;
+      padding-block: 17px;
       color: $very-dark-blue;
       @include text-style(16px, 700);
       font-family: $font;
@@ -368,6 +389,131 @@ main{
 
       #thumbnail-container{
         display: flex;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 900px) {
+  body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;  
+  }
+
+  #navigation-wrapper{
+    padding: 20px 150px;
+
+    #left-container{
+      #menu-btn, #close-btn{
+        display: none;
+      }
+
+      #navigation{
+        z-index: 0;
+        display: inline-block;
+        position: static;
+        background-color: $white;
+
+        nav{
+          background-color: $white;
+          width: auto;
+          padding: 0;
+          margin-left: 60px;
+
+          div{
+            flex-direction: row;
+            column-gap: 35px;
+
+            a{
+              color: $dark-grayish-blue;
+              @include text-style(16px, 400);
+            }
+          }
+        }
+      }
+    }
+
+    #right-container{
+      .account-avatar{
+        border-radius: 50%;
+        height: 40px;
+        margin-left: 30px;
+      }
+    }
+  }
+
+  main{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: auto 200px;
+    column-gap: 90px;
+
+    .thumbnail-section{
+      width: auto;
+      height: auto;
+      padding: 5px;
+      
+      #displayed-image{
+        border-radius: 15px;
+        object-position: initial;
+      }
+
+      .control-img-btn{
+        display: none;
+      }
+
+      #thumbnail-container{
+        margin-top: 25px;
+        column-gap: 25px;
+        
+        figure{
+          border-radius: 10px;
+          cursor: pointer;
+
+          img{
+            width: 100%;
+            height: 100%;
+            border-radius: inherit;
+          }
+        }
+      }
+    }
+
+    .product-section{
+      padding: 70px 30px;
+
+      .product-detail-container{
+        .product-name{
+          @include text-style(40px, 700);
+          margin-bottom: 40px;
+        }
+
+      }
+
+      .product-price{
+        flex-direction: column;
+        align-items: normal;
+        row-gap: 10px;
+        margin-bottom: 40px;
+
+        .old-price{
+          @include text-style(16px, 700);
+        }
+      }
+
+      #quantity-setting-and-btn-wrapper{
+        flex-direction: row;    
+        #quantity-setting-container{
+          flex: 1;
+          margin: 0;
+          margin-right: 10px;
+        }
+        #add-to-cart-btn{
+          width: 70%;
+          flex: 2;
+        }
       }
     }
   }
