@@ -119,7 +119,6 @@ img{
             text-decoration: none;
             color: $black;
             @include text-style(16px, 700);
-            
           }
         }
       }
@@ -179,6 +178,7 @@ img{
       #cart-product-container{
         flex: auto;
         padding: 25px;
+        row-gap: 15px;
 
         &>p{
           @include text-style(14px, 700);
@@ -217,7 +217,6 @@ img{
           color: $very-dark-blue;
           @include text-style(16px, 700);
           font-family: $font;
-          margin-bottom: 5px;
 
           &:hover{
             background-color: $hover-btn;
@@ -403,13 +402,14 @@ main{
   }
 
   #navigation-wrapper{
-    padding: 20px 150px;
+    padding: 0;
+    inset-inline: 150px;
+    border-bottom: 1px solid $grayish-blue;
 
     #left-container{
       #menu-btn, #close-btn{
         display: none;
       }
-
       #navigation{
         z-index: 0;
         display: inline-block;
@@ -427,8 +427,14 @@ main{
             column-gap: 35px;
 
             a{
+              padding-block: 40px;
               color: $dark-grayish-blue;
               @include text-style(16px, 400);
+              border-bottom: 3px solid $white;
+              &:hover{
+                color: $black;
+                border-bottom: 3px solid orange;
+              }
             }
           }
         }
@@ -436,6 +442,15 @@ main{
     }
 
     #right-container{
+      #cart-container{
+        z-index: 1;
+        position: absolute;
+        top: 75px;
+        left: initial;
+        right: 60px;
+        height: auto;
+        width: 350px;
+      }
       .account-avatar{
         border-radius: 50%;
         height: 40px;

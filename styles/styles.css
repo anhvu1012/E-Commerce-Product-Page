@@ -141,6 +141,7 @@ img {
 #navigation-wrapper #right-container #cart-container #cart-product-container {
   flex: auto;
   padding: 25px;
+  row-gap: 15px;
 }
 #navigation-wrapper #right-container #cart-container #cart-product-container > p {
   font-size: 14px;
@@ -177,7 +178,6 @@ img {
   font-size: 16px;
   font-weight: 700;
   font-family: "Kumbh Sans", sans-serif;
-  margin-bottom: 5px;
 }
 #navigation-wrapper #right-container #cart-container #cart-product-container #checkout-btn:hover {
   background-color: rgba(255, 125, 26, 0.7);
@@ -331,7 +331,9 @@ main .product-section #add-to-cart-btn:hover {
     height: 100vh;
   }
   #navigation-wrapper {
-    padding: 20px 150px;
+    padding: 0;
+    inset-inline: 150px;
+    border-bottom: 1px solid hsl(220, 14%, 75%);
   }
   #navigation-wrapper #left-container #menu-btn, #navigation-wrapper #left-container #close-btn {
     display: none;
@@ -353,9 +355,24 @@ main .product-section #add-to-cart-btn:hover {
     column-gap: 35px;
   }
   #navigation-wrapper #left-container #navigation nav div a {
+    padding-block: 40px;
     color: hsl(219, 9%, 45%);
     font-size: 16px;
     font-weight: 400;
+    border-bottom: 3px solid hsl(0, 0%, 100%);
+  }
+  #navigation-wrapper #left-container #navigation nav div a:hover {
+    color: hsl(0, 0%, 0%);
+    border-bottom: 3px solid orange;
+  }
+  #navigation-wrapper #right-container #cart-container {
+    z-index: 1;
+    position: absolute;
+    top: 75px;
+    left: initial;
+    right: 60px;
+    height: auto;
+    width: 350px;
   }
   #navigation-wrapper #right-container .account-avatar {
     border-radius: 50%;
