@@ -365,14 +365,17 @@ main .product-section #add-to-cart-btn:hover {
     color: hsl(0, 0%, 0%);
     border-bottom: 3px solid orange;
   }
+  #navigation-wrapper #right-container {
+    position: relative;
+  }
   #navigation-wrapper #right-container #cart-container {
     z-index: 1;
     position: absolute;
-    top: 75px;
+    top: 60px;
     left: initial;
-    right: 60px;
-    height: auto;
-    width: 350px;
+    right: -100px;
+    height: 230px;
+    width: 330px;
   }
   #navigation-wrapper #right-container .account-avatar {
     border-radius: 50%;
