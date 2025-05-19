@@ -312,12 +312,15 @@ main .product-section #add-to-cart-btn:hover {
   box-shadow: none;
 }
 
-@media screen and (min-width: 400px) {
+@media screen and (min-width: 500px) {
   main .thumbnail-section {
     height: auto;
   }
   main .thumbnail-section > img {
     object-position: initial;
+  }
+  main .thumbnail-section .control-img-btn {
+    display: none;
   }
   main .thumbnail-section #thumbnail-container {
     display: flex;
@@ -326,9 +329,6 @@ main .product-section #add-to-cart-btn:hover {
 @media screen and (min-width: 900px) {
   body {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
   }
   #navigation-wrapper {
     padding: 0;
@@ -385,7 +385,7 @@ main .product-section #add-to-cart-btn:hover {
   main {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    margin: auto 200px;
+    margin: 200px 200px;
     column-gap: 90px;
   }
   main .thumbnail-section {
@@ -396,9 +396,6 @@ main .product-section #add-to-cart-btn:hover {
   main .thumbnail-section #displayed-image {
     border-radius: 15px;
     object-position: initial;
-  }
-  main .thumbnail-section .control-img-btn {
-    display: none;
   }
   main .thumbnail-section #thumbnail-container {
     margin-top: 25px;
