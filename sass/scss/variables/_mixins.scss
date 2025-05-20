@@ -1,0 +1,6 @@
+@import './basic-variables';
+
+@mixin text-style($font-size, $font-weight){
+  font-size: $font-size;
+  font-weight: $font-weight; 
+}

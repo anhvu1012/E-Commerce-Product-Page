@@ -1,0 +1,137 @@
+@import '../../variables/basic-variables';
+@import '../../variables/mixins';
+
+#navigation-wrapper{
+  #right-container{
+    #cart-nav{
+      position: relative;
+
+      #cart-btn{
+        height: 20px;
+      }
+
+      #cart-quantity{
+        position: absolute;
+        right: -7px;
+        top: -6px;
+        background-color: $orange;
+        color: $white;
+        @include text-style(9px, 400);
+        padding: 1px 7px;
+        border-radius: 12px;
+      }
+
+      &:hover{
+        svg{
+          path{
+            fill: $black;
+          }
+        }
+      }
+    }
+
+    #cart-container{
+      z-index: 1;
+      background-color: $white;
+      position: absolute;
+      top: 75px;
+      left: 10px;
+      right: 10px;
+      height: 280px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+
+      h2{
+        @include text-style(14px, 700);
+        padding: 25px;
+      }
+
+      hr{
+        background-color: $grayish-blue;
+        height: 0.4px;
+        border-width: 0;
+      }
+      
+      #cart-product-container{
+        flex: auto;
+        padding: 25px;
+        row-gap: 15px;
+
+        &>p{
+          @include text-style(14px, 700);
+          color: $dark-grayish-blue;
+          text-align: center;
+        }
+
+        section{
+          column-gap: 15px;
+
+          .cart-product-thumbnail{
+            width: 50px;
+            border-radius: 5px;
+          }
+
+          .product-info{
+            row-gap: 5px;
+            p{
+              @include text-style(15px, 400);
+              color: $dark-grayish-blue;
+            }
+
+            .bold{
+              color: $very-dark-blue;
+              font-weight: 700;
+              margin-left: 5px;
+            }
+          }
+        }
+
+        #checkout-btn{
+          background-color: $orange;
+          border: none;
+          border-radius: 10px;
+          padding-block: 15px;
+          color: $very-dark-blue;
+          @include text-style(16px, 700);
+          font-family: $font;
+
+          &:hover{
+            background-color: $hover-btn;
+          }
+        }
+      }
+    }
+
+    .account-avatar{
+      border-radius: 50%;
+      height: 26px;
+      margin-left: 15px;
+
+      &:hover{
+        outline: 1px solid $orange;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1100px){
+  #navigation-wrapper{
+    #right-container{
+      position: relative;
+      #cart-container{
+        z-index: 1;
+        position: absolute;
+        top: 60px;
+        left: initial;
+        right: -100px;
+        height: 250px;
+        width: 330px;
+      }
+      .account-avatar{
+        border-radius: 50%;
+        height: 40px;
+        margin-left: 30px;
+      }
+    }
+  }
+}

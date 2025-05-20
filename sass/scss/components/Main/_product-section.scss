@@ -1,0 +1,142 @@
+@import '../../variables/basic-variables';
+@import '../../variables/mixins';
+
+main{
+  .product-section{
+    padding: 25px;
+
+    .product-detail-container{
+      margin-bottom: 20px;
+      .company{
+        text-transform: uppercase;
+        @include text-style(13px, 700);
+        color: $dark-grayish-blue;
+        letter-spacing: 1.2px;
+        margin-bottom: 15px;
+      }
+
+      .product-name{
+        @include text-style(28px, 700);
+        color: $very-dark-blue;
+        margin-bottom: 15px;
+        line-height: 1.2;
+      }
+
+      .product-description{
+        @include text-style(15px, 400);
+        color: $dark-grayish-blue;
+        line-height: 1.75;
+      }
+    }
+
+    .product-price{
+      margin-bottom: 25px;
+
+      .current-price{
+        @include text-style(28px, 700);
+        color: $very-dark-blue;
+
+        .discount{
+          @include text-style(16px, 700);
+          background-color: $very-dark-blue;
+          color: $white;
+          border-radius: 5px;
+          padding: 4px 10px;
+          margin-left: 10px;
+        }
+      }
+
+      .old-price{
+        @include text-style(18px, 700);
+        color: $dark-grayish-blue;
+        text-decoration: line-through;
+      }
+    }
+
+    #quantity-setting-container{
+      width: 100%;
+      background-color: $light-grayish-blue;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      padding: 15px 25px;
+      box-sizing: border-box;
+      
+      div{
+        &:hover{
+          svg{
+          use{
+            fill: $hover-btn;
+          }
+        }
+        }
+      }
+
+      #current-quantity{
+        @include text-style(18px, 700);
+        color: $very-dark-blue;
+      }
+    }
+
+    #add-to-cart-btn{
+      width: 100%;
+      background-color: $orange;
+      border: none;
+      border-radius: 10px;
+      padding-block: 17px;
+      color: $very-dark-blue;
+      @include text-style(16px, 700);
+      font-family: $font;
+      box-shadow: 0 15px 30px rgba(255, 125, 26, 0.3);
+
+      svg{
+        fill: $very-dark-blue;
+        margin-right: 10px;
+      }
+
+      &:hover{
+        background-color: $hover-btn;
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1100px){
+  main{
+    .product-section{
+      padding: 70px 30px;
+
+      .product-detail-container{
+        .product-name{
+          @include text-style(40px, 700);
+          margin-bottom: 40px;
+        }
+
+      }
+
+      .product-price{
+        flex-direction: column;
+        align-items: normal;
+        row-gap: 10px;
+        margin-bottom: 40px;
+
+        .old-price{
+          @include text-style(16px, 700);
+        }
+      }
+
+      #quantity-setting-and-btn-wrapper{
+        flex-direction: row;    
+        #quantity-setting-container{
+          flex: 1;
+          margin: 0;
+          margin-right: 10px;
+        }
+        #add-to-cart-btn{
+          width: 70%;
+          flex: 2;
+        }
+      }
+    }
+  }
+}
