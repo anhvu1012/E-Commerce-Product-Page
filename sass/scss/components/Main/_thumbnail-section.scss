@@ -15,12 +15,6 @@ main {
     height: 300px;
     overflow: hidden;
 
-    #displayed-image{
-      width: 100%;
-      height: auto;
-      object-position: 0 -35px;
-    }
-
     .control-img-btn{
       position: absolute;
       top: 50%;
@@ -29,6 +23,13 @@ main {
       border-radius: 50%;
       padding: 14px 17px;
       background-color: $white;
+    }
+
+    #displayed-image{
+      width: 100%;
+      height: auto;
+      object-position: 0 -35px;
+      pointer-events: none;
     }
 
     #previous-btn{
@@ -69,6 +70,8 @@ main {
         object-position: initial;
         width: auto;
         height: auto;
+        pointer-events: auto;
+        cursor: pointer;
       }
 
       .control-img-btn{

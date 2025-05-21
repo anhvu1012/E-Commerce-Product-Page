@@ -24,10 +24,18 @@ let currentQuantity = 0;
 const cartProductContainer = document.getElementById('cart-product-container');
 const addToCartBtn = document.getElementById('add-to-cart-btn');
 
+// lightbox section
+const desktopLightBox = document.getElementById('desktop-lightbox');
+const lightboxCloseButton = document.getElementById('lightbox-close-button');
+
 const showCurrentImg = (index) =>{
   displayedImg.src = images[index];
   displayedImg.alt = 'Product image ' + (index + 1);
 };
+
+const toggleDesktopLightBox = () => {
+  desktopLightBox.classList.toggle('hidden');
+}
 
 const updateQuantity = (quantity) => {
   if (quantity < 0) {
@@ -47,6 +55,14 @@ const deleteCart = () => {
 
   cartProductContainer.innerHTML = '<p>Your cart is empty.</p>';
 };
+
+displayedImg.addEventListener('click', () => {
+  desktopLightBox.style.display = 'block';
+});
+
+lightboxCloseButton.addEventListener('click', () => {
+  desktopLightBox.style.display = 'none';
+});
 
 menuBtn.addEventListener('click', () => {
   navigation.style.display = 'block';
