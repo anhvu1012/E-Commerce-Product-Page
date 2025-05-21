@@ -816,37 +816,91 @@ main .product-section #add-to-cart-btn:hover {
     flex: 2;
   }
 }
-body {
-  padding: 0;
+figure, h1, h2, p, hr {
   margin: 0;
-  background-color: hsl(0, 0%, 100%);
-  font-family: "Kumbh Sans", sans-serif;
-  background-color: hsl(0, 0%, 100%);
-  position: relative;
+  padding: 0;
 }
 
-main {
-  margin-top: 65px;
+img {
+  box-sizing: border-box;
+  object-fit: fill;
 }
 
-@media screen and (min-width: 500px) {
-  main .thumbnail-section {
-    height: auto;
-  }
-  main .thumbnail-section > img {
-    object-position: initial;
-  }
+.flex {
+  display: flex;
 }
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+figure, h1, h2, p, hr {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  box-sizing: border-box;
+  object-fit: fill;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
 @media screen and (min-width: 1100px) {
-  body {
-    display: flex;
-  }
-  main {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    margin: 200px 200px 100px;
-    column-gap: 90px;
-  }
   main #desktop-lightbox {
     display: block;
     z-index: 5;
@@ -908,5 +962,37 @@ main {
   }
   main #desktop-lightbox #lightbox-thumbnail-container figure:hover img {
     opacity: 0.6;
+  }
+}
+body {
+  padding: 0;
+  margin: 0;
+  background-color: hsl(0, 0%, 100%);
+  font-family: "Kumbh Sans", sans-serif;
+  background-color: hsl(0, 0%, 100%);
+  position: relative;
+}
+
+main {
+  margin-top: 65px;
+}
+
+@media screen and (min-width: 500px) {
+  main .thumbnail-section {
+    height: auto;
+  }
+  main .thumbnail-section > img {
+    object-position: initial;
+  }
+}
+@media screen and (min-width: 1100px) {
+  body {
+    display: flex;
+  }
+  main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 200px 200px 100px;
+    column-gap: 90px;
   }
 }/*# sourceMappingURL=styles.css.map */
