@@ -7,6 +7,8 @@ const nextBtn = document.getElementById('next-btn');
 let currentIndex = 0;
 
 const productSmallThumbnails = Array.from(document.querySelectorAll('#thumbnail-container figure'));
+const productSmallThumbnailImage = Array.from(document.querySelectorAll('#thumbnail-container figure img'));
+
 
 const showCurrentImg = (index) =>{
   displayedImg.src = images[index];
