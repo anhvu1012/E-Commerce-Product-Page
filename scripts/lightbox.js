@@ -8,11 +8,17 @@ const previousBtn = document.getElementById('lightbox-previous-btn');
 const nextBtn = document.getElementById('lightbox-next-btn');
 
 const lightboxSmallThumbnails = document.querySelectorAll('#lightbox-thumbnail-container figure');
-const lightboxSmallThumbnailImages = Array.from(document.querySelectorAll('#lightbox-thumbnail-container figure img'));
+const images = ["images/image-product-1.jpg", "images/image-product-2.jpg", "images/image-product-3.jpg", "images/image-product-4.jpg"];
 
-const showCurrentImg = (thumbnail, index) =>{
-  lightboxBigImage.src = thumbnail.src;
+const showCurrentImg = (index) =>{
+  lightboxBigImage.src = images[index];
   lightboxBigImage.alt = 'Product image ' + (index + 1);
+};
+
+const removeThumbnailActiveClass = () => {
+  lightboxSmallThumbnails.forEach((thumbnail) => {
+    thumbnail.classList.remove('thumbnail-active');
+  });
 };
 
 export const initializeLightBox = () => {
@@ -25,16 +31,20 @@ export const initializeLightBox = () => {
   });
 
   previousBtn.addEventListener('click', () => {
-    console.log('previous')
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showCurrentImg(currentIndex); 
   });
 
   nextBtn.addEventListener('click', () => {
-    console.log('next')
+    currentIndex = (currentIndex + 1 + images.length) % images.length;
+    showCurrentImg(currentIndex); 
   });
 
-  lightboxSmallThumbnailImages.forEach((thumbnail, index) => {
+  lightboxSmallThumbnails.forEach((thumbnail, index) => {
     thumbnail.addEventListener('click', () => {
-      showCurrentImg(thumbnail, index);
+      removeThumbnailActiveClass();
+      thumbnail.classList.add('thumbnail-active');
+      showCurrentImg(index);
     });
   });
 };
