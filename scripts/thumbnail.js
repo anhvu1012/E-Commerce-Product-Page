@@ -30,14 +30,20 @@ const removeThumbnailActiveClass = ( location ) => {
 };
 
 export const initializeThumbnail = () => {
+  showCurrentImg(thumbnailiBigImage, currentThumbnailIndex); 
+  showCurrentImg(lightboxBigImage, currentLightboxIndex); 
+
   previousBtn.addEventListener('click', () => {
     currentThumbnailIndex = (currentThumbnailIndex - 1 + images.length) % images.length;
     showCurrentImg(thumbnailiBigImage, currentThumbnailIndex); 
+    console.log(currentThumbnailIndex)
   });
 
   nextBtn.addEventListener('click', () => {
     currentThumbnailIndex = (currentThumbnailIndex + 1 + images.length) % images.length;
     showCurrentImg(thumbnailiBigImage, currentThumbnailIndex); 
+    console.log(currentThumbnailIndex)
+
   });
 
   productSmallThumbnails.forEach((thumbnail, index) => {
@@ -45,11 +51,18 @@ export const initializeThumbnail = () => {
       removeThumbnailActiveClass(productSmallThumbnails);
       thumbnail.classList.add('thumbnail-active');
       showCurrentImg(thumbnailiBigImage, index);
+      currentThumbnailIndex = index;
+      currentLightboxIndex = currentThumbnailIndex;
+    console.log(currentThumbnailIndex)
+
     });
   });
 
   // LIGHTBOX
   thumbnailiBigImage.addEventListener('click', () => {
+    showCurrentImg(lightboxBigImage, currentThumbnailIndex);
+    removeThumbnailActiveClass(lightboxSmallThumbnails);
+    lightboxSmallThumbnails[currentThumbnailIndex].classList.add('thumbnail-active');
     desktopLightBox.style.display = 'block';
   });
 
@@ -59,12 +72,16 @@ export const initializeThumbnail = () => {
 
   lightboxPreviousBtn.addEventListener('click', () => {
     currentLightboxIndex = (currentLightboxIndex - 1 + images.length) % images.length;
-    showCurrentImg(lightboxBigImage, currentLightboxIndex); 
+    showCurrentImg(lightboxBigImage, currentLightboxIndex);
+    removeThumbnailActiveClass(lightboxSmallThumbnails);
+    lightboxSmallThumbnails[currentLightboxIndex].classList.add('thumbnail-active');
   });
 
   lightboxNextBtn.addEventListener('click', () => {
     currentLightboxIndex = (currentLightboxIndex + 1 + images.length) % images.length;
-    showCurrentImg(lightboxBigImage, currentLightboxIndex); 
+    showCurrentImg(lightboxBigImage, currentLightboxIndex);
+    removeThumbnailActiveClass(lightboxSmallThumbnails);
+    lightboxSmallThumbnails[currentLightboxIndex].classList.add('thumbnail-active');
   });
 
   lightboxSmallThumbnails.forEach((thumbnail, index) => {
@@ -72,6 +89,7 @@ export const initializeThumbnail = () => {
       removeThumbnailActiveClass(lightboxSmallThumbnails);
       thumbnail.classList.add('thumbnail-active');
       showCurrentImg(lightboxBigImage, index);
+      currentLightboxIndex = index;
     });
   });
 };
