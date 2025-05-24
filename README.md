@@ -10,7 +10,6 @@ This is a solution to the [E-commerce product page challenge on Frontend Mentor]
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
@@ -33,11 +32,11 @@ Users should be able to:
 
 #### Desktop Version
 
-![](./screenshot.jpg)
+![](solutions/desktop_solution.png)
 
 #### Mobile Version
 
-![](./screenshot.jpg)
+![](solutions/mobile_solution.png)
 
 ### Links
 
@@ -54,24 +53,6 @@ Users should be able to:
 - CSS Grid
 - Mobile-first workflow
 - [SASS](https://sass-lang.com/)
-
-### What I learned
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉');
-};
-```
 
 ## Author
 
