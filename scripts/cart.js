@@ -65,12 +65,15 @@ const addToCart = () => {
           id="delete-btn"
           src="images/icon-delete.svg"
           alt="Delete button icon"
-          onclick="deleteCart()"
         />
       </div>
     </section>
     <button class="cursor-pointer" id="checkout-btn">Checkout</button>
     `;
+
+    // Add event listener for the delete button
+    const deleteBtn = document.getElementById('delete-btn');
+    deleteBtn.addEventListener('click', deleteCart);
   }
 };
 
